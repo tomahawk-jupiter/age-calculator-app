@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-gray: hsl(0, 0%, 86%);
+  --smokey-gray: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+  --input-font-size: 2rem;
+
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--off-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.app {
+  width: 600px;
+  background-color: var(--white);
+  border-radius: 24px 24px 128px 24px;
+  padding: 3rem;
+  margin: 1rem;
+}
+
+form {
+  display: flex;
+  color: var(--smokey-gray);
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+  border-radius: 5px;
+}
+label {
+  text-transform: uppercase;
+  margin-bottom: 0.25em;
+  font-size: small;
+}
+input[type="text"] {
+  font-size: var(--input-font-size);
+  width: 100px;
+  padding: 0.25em;
+  font-weight: 700;
+  outline: none;
+  border: solid 1px var(--light-gray);
+  border-radius: 4px;
+}
+
+.error {
+  color: var(--light-red);
+}
+
+.error input[type="text"] {
+  color: var(--light-red);
+  border-color: var(--light-red);
+  outline: none;
+}
+.error-message {
+  font-size: 400;
+  font-style: italic;
+}
+.output-container {
+  font-size: 80px;
+  font-weight: 800;
+  font-style: italic;
+  color: var(--off-black);
+  line-height: 1.1;
+}
+.output-value {
+  color: var(--purple);
+}
+
+/* Button and decorative line */
+
+.fab-container {
+  display: flex;
+  align-items: center;
+}
+button {
+  border-radius: 50%;
+  background-color: var(--purple);
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+}
+button:active {
+  background-color: var(--off-black);
+}
+.decorative-line {
+  height: 1px;
+  width: 100%;
+  background-color: var(--light-gray);
+}
+
+@media (max-width: 610px) {
+  .fab-container {
+    margin: 30px auto;
+    flex-direction: column;
+  }
+  button {
+    z-index: 1;
+  }
+  .decorative-line {
+    position: relative;
+    top: 40px;
+  }
+  .app {
+    width: 300px;
+    padding: 1.5rem;
+  }
+
+  form {
+    justify-content: space-between;
+  }
+  .form-field {
+    margin-right: 0;
+  }
+  label {
+    margin-bottom: 0.25em;
+    font-size: small;
+  }
+  input[type="text"] {
+    font-size: 1.5rem;
+    width: 75px;
+    padding: 0.25em;
+  }
+  .output-container {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+}
